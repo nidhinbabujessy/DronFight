@@ -4,7 +4,7 @@ public class FlightPropulsion : MonoBehaviour
 {
     public float hoverHeight = 5f;
     public float hoverForce = 10f;
-    public float damping = 5f; // Damping factor to stabilize hovering
+    public float damping = 5f; 
 
     private Rigidbody rb;
 
@@ -14,7 +14,7 @@ public class FlightPropulsion : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        if (rb == null) return; // Ensure we have a Rigidbody before proceeding
+        if (rb == null) return;
 
         Ray ray = new Ray(transform.position, Vector3.down);
         RaycastHit hit;

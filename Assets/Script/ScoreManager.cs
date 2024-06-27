@@ -9,27 +9,32 @@ public class ScoreManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText; // Reference to the TMP Text component
     public GameObject win;
+
+   
+    
     void Start()
     {
         enemiesRemaining = enemies.Length;
         UpdateScoreText();
+       
     }
 
     public void EnemyDestroyed()
     {
         enemiesRemaining--;
-        score += 100; // Example: Increase score when enemy is destroyed
+        score += 100;
         UpdateScoreText();
 
         if (enemiesRemaining <= 0)
         {
+           
             win.SetActive(true);
             Debug.Log("You win!");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            // Implement your win condition logic here
+            
         }
-    }
+    } 
 
     void UpdateScoreText()
     {

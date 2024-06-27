@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public string bulletTag = "Bullet"; // Tag of the bullet GameObject
+    public string bulletTag = "Bullet";
 
     private ScoreManager scoreManager;
 
     void Start()
     {
-        scoreManager = GameObject.FindObjectOfType<ScoreManager>(); // Find ScoreManager
+        scoreManager = GameObject.FindObjectOfType<ScoreManager>();
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(bulletTag))
         {
-            Destroy(gameObject); // Destroy the enemy
-            scoreManager.EnemyDestroyed(); // Notify ScoreManager
+            Destroy(gameObject); 
+            scoreManager.EnemyDestroyed();
         }
     }
 }

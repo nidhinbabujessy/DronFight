@@ -9,20 +9,20 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        // Reset the bullet's velocity and angular velocity
+        
         if (rb != null)
         {
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
             rb.AddForce(transform.forward * speed, ForceMode.Impulse);
         }
-        // Start the coroutine to disable the bullet after 3 seconds
+       
         StartCoroutine(DisableAfterTime(3f));
     }
 
     private void OnDisable()
     {
-        // Stop the coroutine if the bullet is disabled before 3 seconds
+       
         StopAllCoroutines();
     }
 
